@@ -1,0 +1,126 @@
+.write {
+	padding-top: 50px;
+	min-height: calc(100vh - 170px);
+}
+
+.writeImg {
+	width: 70%;
+	height: 350px;
+	border-radius: 10px;
+	object-fit: cover;
+	margin: 0 auto;
+	display: block;
+}
+
+.writeForm {
+	width: 100%;
+	padding: 0 30px;
+	max-width: 1000px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.writeFormGroup {
+	display: flex;
+	align-items: center;
+}
+
+.writeIcon {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	border: solid 1px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #999;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+.writeInput {
+	font-size: 30px;
+	padding: 20px;
+	border: none;
+	width: 100%;
+	/* font-family: "PT Sans", sans-serif; */
+}
+
+.writeInput:focus {
+	outline: none;
+}
+
+.writeText {
+	font-size: 20px;
+	min-height: 650px;
+}
+
+.writeSubmit {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	background-color: teal;
+	padding: 10px;
+	border: none;
+	color: white;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.writeSelectCat {
+	margin: 10px 0;
+}
+
+.writeSelectCat .select__value-container {
+	padding: 5px 15px;
+}
+
+.writeInput.writeTitle {
+	padding-right: 70px;
+}
+@media only screen and (max-width: 1200px) {
+	.writeText {
+		min-height: 400px;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.writeInput.writeTitle {
+		padding-right: 10px;
+	}
+
+	.writeSubmit {
+		top: -35px;
+	}
+
+	.singlePost .writeForm {
+		margin-top: 50px;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.writeForm {
+		padding: 0 15px;
+	}
+
+	.writeImg {
+		width: 100%;
+		padding: 0 20px;
+		height: 200px;
+	}
+
+	.writeInput {
+		font-size: 18px;
+		padding: 20px 10px;
+	}
+
+	.writeText {
+		font-size: 15px;
+	}
+
+	.writeIcon {
+		font-size: 12px;
+		width: 18px;
+		height: 18px;
+	}
+}

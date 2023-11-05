@@ -1,0 +1,87 @@
+.contact {
+	padding: 30px;
+	min-height: calc(100vh - 180px);
+	/* fade in */
+	animation: fadeInAnimation ease-in 0.2s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	max-width: 1400px;
+	margin: 0 auto;
+}
+
+@keyframes fadeInAnimation {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.contactWrapper {
+	display: flex;
+	border-top: solid 1px #333;
+	padding: 20px 0;
+	margin-bottom: 50px;
+}
+
+.contactWrapper > div {
+	width: 50%;
+}
+
+.contact h1 {
+	font-size: 60px;
+	text-align: center;
+	font-weight: bold;
+	font-family: "PT Serif", serif;
+	margin: 30px auto 70px;
+}
+
+.contact h2 {
+	font-size: 40px;
+}
+
+.contactRight {
+	padding: 0 20px;
+	border-left: solid 1px #222;
+}
+
+.contactRight h3 {
+	font-family: "Josefin Sans", sans-serif;
+	font-weight: 300;
+	margin-bottom: 5px;
+}
+
+.contactRight p {
+	font-size: 14px;
+	text-decoration: underline;
+	margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+	.contact h1 {
+		font-size: 30px;
+	}
+
+	.contact h2 {
+		font-size: 20px;
+	}
+
+	.contactWrapper {
+		flex-direction: column;
+		margin-bottom: 20px;
+	}
+
+	.contactWrapper > div {
+		width: 100%;
+	}
+
+	.contactRight {
+		padding: 0;
+		border: none;
+	}
+
+	.contactLeft {
+		margin-bottom: 20px;
+	}
+}

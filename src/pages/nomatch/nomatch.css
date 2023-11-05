@@ -1,0 +1,145 @@
+/*======================
+    404 page
+=======================*/
+
+.page_404 {
+	padding: 60px 0;
+	background: #fff;
+	font-family: "Arvo", serif;
+}
+
+.page_404 img {
+	width: 100%;
+}
+
+.page_404 .row {
+	display: flex;
+	justify-content: center;
+}
+
+.wrapper404 {
+	text-align: center;
+	width: 80%;
+	max-width: 700px;
+}
+
+.four_zero_four_bg {
+	/* background-image: url(https://media.giphy.com/avatars/404academy/kGwR3uDrUKPI.gif); */
+	height: 400px;
+	background-position: center;
+	/* margin-bottom: 40px; */
+}
+
+.four_zero_four_bg h1 {
+	font-size: 60px;
+	margin-bottom: 40px;
+}
+
+.four_zero_four_bg h3 {
+	font-size: 80px;
+}
+
+.link_404 {
+	color: #fff !important;
+	padding: 10px 20px;
+	background: teal;
+	margin: 20px 0;
+	display: inline-block;
+	transition: all 0.2s ease-in;
+}
+
+.link_404:hover {
+	background-color: black;
+}
+
+.contant_box_404 {
+	margin-top: -50px;
+}
+
+/* tipsiz css */
+
+.tipsiz {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 10px;
+	flex-direction: column;
+}
+.tipsiz-body {
+	display: flex;
+	align-items: center;
+	margin: 10px;
+}
+.arm {
+	align-self: flex-end;
+	width: 50px;
+	height: 90px;
+	border-top: 3px solid black;
+}
+.left-arm {
+	border-right: 3px solid black;
+	transform: skew(20deg);
+}
+.right-arm {
+	border-left: 3px solid black;
+	transform: skew(-20deg);
+}
+
+.face {
+	width: 300px;
+	height: 200px;
+	border: 3px solid black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-left: 20px;
+	margin-right: 20px;
+	border-radius: 15px;
+}
+.upper-face {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	letter-spacing: 80px;
+	margin-left: 80px;
+}
+.element {
+	font-size: 60px;
+}
+.mouth {
+	width: 20px;
+	height: 10px;
+	border-top-left-radius: 25px;
+	border-top-right-radius: 25px;
+	border: 3px solid black;
+	border-bottom: 0;
+}
+
+@media only screen and (max-width: 768px) {
+	.four_zero_four_bg h1 {
+		font-size: 40px;
+	}
+
+	.arm {
+		width: 30px;
+	}
+
+	.face {
+		width: 180px;
+		height: 170px;
+	}
+
+	.element {
+		font-size: 60px;
+	}
+
+	.upper-face {
+		letter-spacing: 30px;
+		margin-left: 30px;
+	}
+
+	.four_zero_four_bg {
+		height: 350px;
+	}
+}

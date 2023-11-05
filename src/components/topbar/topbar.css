@@ -1,0 +1,172 @@
+.topBar {
+	width: 100%;
+	height: 50px;
+	position: sticky;
+	top: 0;
+	background-color: white;
+	display: flex;
+	align-items: center;
+	font-family: "Josefin Sans", sans-serif;
+	z-index: 999;
+	-webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+.topLeft,
+.topRight {
+	flex: 3;
+	display: flex;
+	align-items: center;
+}
+
+.topLeft {
+	justify-content: center;
+}
+
+.topRight {
+	justify-content: flex-end;
+	padding-right: 30px;
+}
+
+.topCenter {
+	flex: 6;
+}
+
+.topImg {
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+	object-fit: cover;
+	border-radius: 50%;
+	vertical-align: middle;
+}
+
+.topIcon {
+	font-size: 20px;
+	margin-right: 10px;
+	color: #444;
+}
+
+.topList {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.topListItem {
+	margin: 0 10px;
+	font-size: 18px;
+	font-weight: 300;
+	cursor: pointer;
+}
+
+.topListItem .active {
+	font-weight: 400;
+	position: relative;
+}
+
+.topListItem a {
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.topListItem a.logout {
+	margin-right: 20px;
+	background-color: black;
+	color: white;
+	transition: all 0.2s ease-in;
+	font-size: 14px;
+}
+
+.topListItem a.logout:hover {
+	background-color: lightcoral;
+}
+
+.topSearchIcon {
+	font-size: 18px;
+	color: #222;
+	cursor: pointer;
+	margin-left: 15px;
+}
+
+.menu-icon {
+	display: none;
+}
+
+@media only screen and (max-width: 1200px) {
+	.topSearchIcon {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.topCenter {
+		flex: none;
+		position: absolute;
+		right: 0;
+		top: 50px;
+		background-color: white;
+		width: 0;
+		height: calc(100vh - 50px);
+		transition: all 0.3s ease-in;
+		overflow: hidden;
+		-webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+		-moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+		box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+	}
+
+	.topCenter.active {
+		width: 270px;
+	}
+
+	.topCenter ul {
+		display: flex;
+		flex-direction: column;
+		padding-left: 40px;
+		align-items: flex-start;
+		margin: 20px 0;
+		width: 270px;
+	}
+
+	.topCenter ul li {
+		margin-top: 30px;
+	}
+
+	.topCenter li a {
+		padding-left: 0;
+	}
+
+	.topCenter ul li .active::after {
+		content: "";
+		position: absolute;
+		bottom: 5px;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background-color: #222;
+	}
+
+	.menu-icon {
+		display: block;
+		cursor: pointer;
+		margin-left: 20px;
+	}
+
+	.menu-icon i {
+		font-size: 20px;
+	}
+
+	.topListItem a.logout {
+		margin-right: 10px;
+	}
+
+	.topLeft,
+	.topRight {
+		flex: 5;
+	}
+
+	.topRight .topList.loginNav {
+		display: none;
+	}
+}
