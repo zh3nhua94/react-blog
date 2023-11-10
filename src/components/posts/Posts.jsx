@@ -21,6 +21,7 @@ const Posts = ({ posts }) => {
 		<div className="posts">
 			{posts ? (
 				<>
+					{console.log(posts)}
 					{posts.slice(0, visibleData).map((p) => (
 						<Post
 							key={p._id}
