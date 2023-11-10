@@ -1,0 +1,24 @@
+.loadingWrapper {
+	text-align: center;
+	text-align: center;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+div.loadingCircle {
+	width: 50px;
+	height: 50px;
+	border: 10px solid black;
+	border-top: 10px solid #bbb;
+	border-radius: 100%;
+	animation: loader 1s infinite linear;
+	align-self: center;
+}
+
+@keyframes loader {
+	100% {
+		transform: rotate(360deg);
+	}
+}
