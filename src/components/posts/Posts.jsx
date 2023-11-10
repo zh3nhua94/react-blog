@@ -19,9 +19,8 @@ const Posts = ({ posts }) => {
 
 	return (
 		<div className="posts">
-			{posts ? (
+			{posts.length ? (
 				<>
-					{console.log(posts)}
 					{posts.slice(0, visibleData).map((p) => (
 						<Post
 							key={p._id}
