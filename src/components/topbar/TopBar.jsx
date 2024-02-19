@@ -33,12 +33,27 @@ const TopBar = () => {
 	return (
 		<div className="topBar">
 			<div className="topLeft">
-				<i className="topIcon fa-brands fa-square-facebook"></i>
-				<i className="topIcon fa-brands fa-square-instagram"></i>
-				<i className="topIcon fa-brands fa-square-twitter"></i>
-				<i className="topIcon fa-brands fa-square-facebook"></i>
+				<i
+					className="topIcon fa-brands fa-square-facebook"
+					aria-label="Facebook"
+				></i>
+				<i
+					className="topIcon fa-brands fa-square-instagram"
+					aria-label="Instagram"
+				></i>
+				<i
+					className="topIcon fa-brands fa-square-twitter"
+					aria-label="Twitter"
+				></i>
+				<i
+					className="topIcon fa-brands fa-square-pinterest"
+					aria-label="Pinterest"
+				></i>
 			</div>
-			<div className={`topCenter  ${showNavbar && "active"}`}>
+			<div
+				className={`topCenter  ${showNavbar && "active"}`}
+				data-testid="topCenter"
+			>
 				<ul className="topList">
 					<li className="topListItem">
 						<NavLink to="/">HOME</NavLink>
@@ -102,6 +117,7 @@ const TopBar = () => {
 				<div
 					className="menu-icon"
 					onClick={handleShowNavbar}
+					aria-label="Menu Icon"
 				>
 					<i className="fa-solid fa-bars"></i>
 				</div>
