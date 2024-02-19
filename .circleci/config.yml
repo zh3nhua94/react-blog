@@ -1,0 +1,39 @@
+version: 2.1
+jobs:
+  # name of job -> build
+  build:
+    docker:
+      - image: cimg/node:18.17.0
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: npm install
+      - run: CI=true npm run build #check if is Continuous Integration environment
+  # name of job -> test
+  test:
+    docker:
+      - image: cimg/node:18.17.0
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: npm install
+      - run: npm run test
+  # name of job -> Hi there
+  hithere:
+    docker:
+      - image: cimg/node:18.17.0
+    steps:
+      - checkout
+      - run: echo "Hi there!"
+workflows:
+  version: 2.1
+  build-and-test:
+    jobs:
+      - build
+      - hithere
+      - test:
+          requires:
+            - hithere
+      #this means test job requires hithere to succeed then only start running
