@@ -14,6 +14,7 @@ const Post = ({ post }) => {
 						src={PF + post.photo}
 						alt=""
 						className="postImg"
+						data-testid="postImg"
 					/>
 				</Link>
 			)}
