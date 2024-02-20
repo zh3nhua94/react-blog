@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { MemoryRouter, BrowserRouter as Router } from "react-router-dom";
 import TopBar from "./TopBar";
@@ -16,12 +16,30 @@ describe("TopBar Component", () => {
 		expect(screen.getByLabelText("Pinterest")).toBeInTheDocument();
 	});
 
-	test("renders Logout link when user is present in context", () => {
+	test("renders Logout link when user is present in context and handles logout correctly", async () => {
 		// Mock the context to provide a user
 		const user = jest.fn();
+		// Mock the dispatch function and window.location.replace
+		const mockDispatch = jest.fn();
+		const mockReplace = jest.fn();
+
+		// Mock the global window object
+		global.window = Object.create(window);
+		Object.defineProperty(window, "location", {
+			value: {
+				replace: mockReplace,
+			},
+		});
+
+		// Mock the useContext hook to produce the necessary context values, skip the user, just show dispatch
+		jest.mock("../../context/Context", () => ({
+			useContext: jest.fn(() => ({
+				dispatch: mockDispatch,
+			})),
+		}));
 
 		render(
-			<Context.Provider value={{ user }}>
+			<Context.Provider value={{ user, dispatch: mockDispatch }}>
 				<MemoryRouter>
 					<TopBar />
 				</MemoryRouter>
@@ -29,7 +47,22 @@ describe("TopBar Component", () => {
 		);
 
 		// Assuming the logout link has specific text content
-		expect(screen.getByText("LOGOUT")).toBeInTheDocument();
+		const logoutLink = screen.getByText("LOGOUT");
+		expect(logoutLink).toBeInTheDocument();
+
+		// Find the logout link and click it
+		fireEvent.click(logoutLink);
+
+		// Wait for the redirect to occur
+		await waitFor(() => {
+			// Assertions
+			expect(mockDispatch).toHaveBeenCalledWith({ type: "LOGOUT" });
+			expect(mockReplace).toHaveBeenCalledWith("/login");
+		});
+
+		// Clear mock functions
+		mockDispatch.mockClear();
+		mockReplace.mockClear();
 	});
 
 	test("does not render Logout link when user is not present in context", () => {
@@ -62,4 +95,8 @@ describe("TopBar Component", () => {
 		// Check if the navigation is visible after clicking the menu icon
 		expect(topCenterElement).toHaveClass("topCenter active");
 	});
+});
+
+afterAll(() => {
+	delete global.window;
 });
