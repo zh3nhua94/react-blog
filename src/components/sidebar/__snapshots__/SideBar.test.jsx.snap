@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SideBar renders Sidebar snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sideBar"
+  >
+    <div
+      class="sideBarItem"
+    >
+      <span
+        class="sideBarTitle"
+      >
+        ABOUT US
+      </span>
+      <img
+        alt=""
+        class="sideBarImg"
+        src="http://localhost:8800/images/about.jpeg"
+      />
+      <p
+        class="sideBarText"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+      </p>
+    </div>
+    <div
+      class="sideBarItem"
+    >
+      <span
+        class="sideBarTitle"
+      >
+        CATEGORIES
+      </span>
+      <ul
+        class="sideBarList"
+      />
+    </div>
+    <div
+      class="sideBarItem"
+    >
+      <span
+        class="sideBarTitle"
+      >
+        FOLLOW US
+      </span>
+      <div
+        class="sideBarSocial"
+      >
+        <i
+          class="sideBarIcon fa-brands fa-square-facebook"
+        />
+        <i
+          class="sideBarIcon fa-brands fa-square-instagram"
+        />
+        <i
+          class="sideBarIcon fa-brands fa-square-twitter"
+        />
+        <i
+          class="sideBarIcon fa-brands fa-square-facebook"
+        />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
