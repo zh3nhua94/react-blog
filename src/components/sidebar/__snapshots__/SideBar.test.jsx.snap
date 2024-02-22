@@ -34,7 +34,26 @@ exports[`SideBar renders Sidebar snapshot 1`] = `
       </span>
       <ul
         class="sideBarList"
-      />
+      >
+        <li
+          class="sideBarListItem"
+        >
+          <a
+            href="/?cat=Category 1#home"
+          >
+            Category 1
+          </a>
+        </li>
+        <li
+          class="sideBarListItem"
+        >
+          <a
+            href="/?cat=Category 2#home"
+          >
+            Category 2
+          </a>
+        </li>
+      </ul>
     </div>
     <div
       class="sideBarItem"

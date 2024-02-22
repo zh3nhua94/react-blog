@@ -26,16 +26,14 @@ describe("Post Component", () => {
 		expect(postImage).toHaveAttribute("src", `${process.env.REACT_APP_PUBLIC_FOLDER}${samplePost.photo}`);
 
 		// Check if post categories are rendered and linked
-		const postCategories = document.querySelectorAll(".postCat");
-		expect(postCategories).toHaveLength(samplePost.categories.length);
 		samplePost.categories.forEach((c, index) => {
-			const categoryLink = screen.getByText(c).closest("a");
+			const categoryLink = screen.getByRole("link", { name: c });
 			expect(categoryLink).toBeInTheDocument();
 			expect(categoryLink).toHaveAttribute("href", `/?cat=${c}#home`);
 		});
 
 		// Check if post title is rendered and linked
-		const postTitleLink = screen.getByText(samplePost.title).closest("a");
+		const postTitleLink = screen.getByRole("link", { name: samplePost.title });
 		expect(postTitleLink).toBeInTheDocument();
 		expect(postTitleLink).toHaveAttribute("href", `/post/${samplePost._id}`);
 

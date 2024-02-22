@@ -20,7 +20,10 @@ const Post = ({ post }) => {
 			)}
 
 			<div className="postInfo">
-				<div className="postCats">
+				<div
+					className="postCats"
+					data-testid="postCats"
+				>
 					{post.categories.map((c) => (
 						<HashLink
 							key={c}

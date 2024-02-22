@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { MemoryRouter, BrowserRouter as Router } from "react-router-dom";
+import { MemoryRouter } from "react-router-dom";
 import TopBar from "./TopBar";
 import { Context } from "../../context/Context";
 
@@ -57,8 +57,8 @@ describe("TopBar Component", () => {
 		await waitFor(() => {
 			// Assertions
 			expect(mockDispatch).toHaveBeenCalledWith({ type: "LOGOUT" });
-			expect(mockReplace).toHaveBeenCalledWith("/login");
 		});
+		expect(mockReplace).toHaveBeenCalledWith("/login");
 
 		// Clear mock functions
 		mockDispatch.mockClear();

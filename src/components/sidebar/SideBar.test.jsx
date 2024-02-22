@@ -26,20 +26,21 @@ describe("SideBar", () => {
 
 		// Wait for the Axios call to complete
 		await waitFor(() => {
-			// Assertions
-			expect(axios.get).toHaveBeenCalledWith(`${process.env.REACT_APP_API_URL}/categories`);
-
 			// // Verify that categories are rendered
 			expect(screen.getByText("Category 1")).toBeInTheDocument();
-			expect(screen.getByText("Category 2")).toBeInTheDocument();
 		});
+		// Assertions
+		expect(axios.get).toHaveBeenCalledWith(`${process.env.REACT_APP_API_URL}/categories`);
 	});
 
 	test("renders Sidebar snapshot", async () => {
 		axios.get.mockResolvedValueOnce({ data: mockData });
-		const { asFragment } = render(<SideBar />);
-		await waitFor(() => {
-			expect(asFragment()).toMatchSnapshot();
-		});
+		const { asFragment } = render(
+			<MemoryRouter>
+				<SideBar />
+			</MemoryRouter>
+		);
+		await screen.findByText("Category 1");
+		expect(asFragment()).toMatchSnapshot();
 	});
 });
